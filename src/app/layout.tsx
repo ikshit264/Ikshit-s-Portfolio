@@ -14,7 +14,9 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <head></head>
+      {/* <head>
+        <link rel="icon" href="/public/1.svg" type="image/svg+xml" />
+      </head> */}
       <body className={`${inter.className}`}>
         <StateProvider>{children}</StateProvider>
         <Analytics />
