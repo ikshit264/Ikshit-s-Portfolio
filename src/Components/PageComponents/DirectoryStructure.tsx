@@ -24,7 +24,7 @@ const DirectoryItem: React.FC<{ item: DirectoryItem; depth: number }> = ({ item,
       <div className="flex items-center py-1" style={{ paddingLeft }}>
         <IoIosDocument className="h-5 w-5 mr-2 text-gray-500" />
         <a
-          href={`https://github.com/ikshit264/Portfolio${item.link}`}
+          href={`https://github.com/ikshit264/Ikshit-s-Portfolio${item.link}`}
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-600 hover:underline text-sm"
