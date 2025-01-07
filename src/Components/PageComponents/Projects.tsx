@@ -51,7 +51,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                         <h1 className='text-white text-2xl font-semibold'>{project.name}</h1>
                         <div>
                             <div className='flex flex-row gap-2'>
-                                <button className='flex p-1 bg-gray-600 gap-1 items-center rounded-md'>
+                                <button title='Repositry' className='flex p-1 bg-gray-600 gap-1 items-center rounded-md'>
                                     <a href={project.repo} target='_blank' className='flex gap-1 items-center '>
                                         <FaGithub size={20} />
                                         <span className='text-white/80'>
@@ -59,7 +59,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                                         </span>
                                     </a>
                                 </button>
-                                <button className='flex p-1 bg-gray-600 gap-1 items-center rounded-md'>
+                                <button title='Live Demo' className='flex p-1 bg-gray-600 gap-1 items-center rounded-md'>
                                     <a href={project.link} target='_blank' className='flex gap-1 items-center'>
                                         <HiExternalLink size={20} />
                                         <span className='text-white/80'>

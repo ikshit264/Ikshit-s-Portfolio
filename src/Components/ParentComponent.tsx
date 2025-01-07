@@ -18,7 +18,7 @@ const ParentComponent: React.FC = () => {
             <div className=' grid grid-cols-2 grid-rows-6 max-w-[300px]' style={{ height: 'calc(100vh - 28px)' }}>
                 {AllFolders.map((folder, index) => (
                     <div key={index} className="flex items-center justify-center">
-                        <button {...(IsPhone
+                        <button title={folder.title} {...(IsPhone
                             ? {
                                 onClick: () => {
                                     makeTrue(index, 'open');

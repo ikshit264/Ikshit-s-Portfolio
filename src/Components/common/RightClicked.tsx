@@ -24,7 +24,7 @@ interface ContentProps {
 const RightClicked: React.FC<RightClickedProps> = ({ position, ChangeBackground }) => {
     const { makeTrue } = useStateManagement();
     const menuRef = useRef<HTMLDivElement>(null);
-    
+
     const OnRefresh = () => {
         // e.stopPropagation();
         window.location.reload();
@@ -38,10 +38,10 @@ const RightClicked: React.FC<RightClickedProps> = ({ position, ChangeBackground 
         {
             Title: "Personalise",
             isActive: true,
-            items: [{ Title: 'Change Background', isActive: true, function : ChangeBackground }],
+            items: [{ Title: 'Change Background', isActive: true, function: ChangeBackground }],
         },
-        { Title: "CMD", isActive: true, image: CMD_img, function : ClickCMD },
-        { Title: "Refresh", isActive: true, function : OnRefresh },
+        { Title: "CMD", isActive: true, image: CMD_img, function: ClickCMD },
+        { Title: "Refresh", isActive: true, function: OnRefresh },
         { Title: "Paste", isActive: false },
         { Title: "Copy", isActive: false },
     ];
@@ -78,8 +78,9 @@ const RightClicked: React.FC<RightClickedProps> = ({ position, ChangeBackground 
             }}
         >
             {Content.map((item, index) => (
-                <div key={index} onClick={item.function ? item.function : () => {}} className="relative group w-full">
+                <div key={index} onClick={item.function ? item.function : () => { }} className="relative group w-full">
                     <button
+                        title={item.Title}
                         className={`${item.isActive
                             ? 'bg-[#dad7d7] relative hover:bg-[#ebeff5] hover:border-[#b5d6f7]'
                             : 'bg-[#c1bdbd] backdrop-blur'
@@ -103,7 +104,8 @@ const RightClicked: React.FC<RightClickedProps> = ({ position, ChangeBackground 
                         >
                             {item.items.map((elem, subIndex) => (
                                 <button
-                                    onClick={elem.function ? elem.function : () => {}}
+                                    title={elem.Title}
+                                    onClick={elem.function ? elem.function : () => { }}
                                     key={subIndex}
                                     className={`${elem.isActive
                                         ? 'bg-[#dad7d7] hover:bg-[#ebeff5] hover:border-[#b5d6f7]'

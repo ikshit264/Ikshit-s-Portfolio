@@ -146,7 +146,7 @@ const LetsconnectForm = () => {
               required
               style={{ fontFamily: 'Courier New, monospace' }}
             />
-            <button
+            <button title='Send'
               type="button"
               onClick={sendVerificationCode}
               disabled={isVerifying || isVerified}
@@ -177,7 +177,7 @@ const LetsconnectForm = () => {
                 required
                 style={{ fontFamily: 'Courier New, monospace' }}
               />
-              <button
+              <button  title='Verify'
                 type="button"
                 onClick={verifyCode}
                 className="bg-green-500 text-white px-4 py-2 rounded-r hover:bg-green-600 transition-colors duration-200"
@@ -209,7 +209,7 @@ const LetsconnectForm = () => {
         </div>
 
         <div className="flex justify-center">
-          <button
+          <button title='Send'
             type="submit"
             disabled={isSubmitting || !isVerified}
             className="font-sans bg-gray-200 text-base tracking-widest uppercase text-black cursor-pointer border-3 border-black px-2 py-1 sm:px-3 sm:py-1.5 shadow-[1px_1px_0px_0px,2px_2px_0px_0px,3px_3px_0px_0px,4px_4px_0px_0px,5px_5px_0px_0px] relative select-none active:shadow-none active:translate-x-1 active:translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"

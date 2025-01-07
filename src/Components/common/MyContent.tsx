@@ -15,17 +15,17 @@ const MySocials: MyComputerProp = {
     title: 'My Socials',
     socials: [
         {
-            Description: "Get my Linkedin",
+            Description: "Linkedin",
             image: Linkedin,
             link: 'https://www.linkedin.com/in/ikshit-talera-ab137725a/'
         },
         {
-            Description: "Get my Github",
+            Description: "Github",
             image: GitHub,
             link: 'https://github.com/ikshit264'
         },
         {
-            Description: "Get my Instagram",
+            Description: "Instagram",
             image: InstaGram,
             link: 'https://www.instagram.com/ikshit_04/'
         }
@@ -36,17 +36,17 @@ const MyCompetative: MyComputerProp = {
     title: 'My Competative',
     socials: [
         {
-            Description: "Get my Leetcode",
+            Description: "Leetcode",
             image: Leetcode,
             link: 'https://leetcode.com/u/ikshit_04/'
         },
         {
-            Description: "Get my Codechef",
+            Description: "Codechef",
             image: Codechef,
             link: 'https://www.codechef.com/users/ikshit_04'
         },
         {
-            Description: "Get my Codeforces",
+            Description: "Codeforces",
             image: codeforces,
             link: 'https://codeforces.com/profile/ikshit_04'
         }

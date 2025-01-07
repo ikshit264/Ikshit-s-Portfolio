@@ -54,6 +54,7 @@ const Screensaver: React.FC = () => {
 
   const handleInteraction = useCallback(() => {
     setIsActive((prev) => !prev)
+    setLastMouseMove(Date.now())
     setIsMouseIdle(false)
   }, [])
 

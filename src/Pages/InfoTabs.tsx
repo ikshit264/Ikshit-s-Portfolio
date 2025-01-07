@@ -56,7 +56,7 @@ const InfoTabs = () => {
       <div className="flex items-center bg-gray-300 max-w-full border-gray-600 px-2 py-1 min-h-16">
         <div className="flex flex-row bg-gray-300 gap-2 px-2 py-1 min-h-12 overflow-x-auto">
           {tabs.map((tab) => (
-            <button
+            <button title={tab.title}
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={`border border-gray-600 p-2 text-left ${activeTab === tab.id ? 'bg-white text-black' : 'bg-gray-300 text-gray-800 hover:bg-gray-400'} text-nowrap`}

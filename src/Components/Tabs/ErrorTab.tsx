@@ -68,7 +68,7 @@ const ErrorTab: React.FC<ChildComponentProps> = ({ index }) => {
                             </div>
                         </div>
                         <div className="flex items-center justify-center">
-                            <button
+                            <button title='OK'
                                 onClick={() => handleClick()}
                                 className={`px-4 border-2 font-medium border-black ${
                                     IsActive ? 'shadow-black shadow-inner' : ''

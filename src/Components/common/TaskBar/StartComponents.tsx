@@ -39,7 +39,7 @@ const StartComponents: React.FC<StartComponentsProps> = ({ setIsShutDown, setIsL
         setIsLoggedOff(true)
     }
 
-    const ErrorOnClick = (index : number) => {
+    const ErrorOnClick = (index: number) => {
         play
         makeErrorTrue(index, 'open');
     }
@@ -141,11 +141,12 @@ const StartComponents: React.FC<StartComponentsProps> = ({ setIsShutDown, setIsL
             {/* Footer */}
             <div className="relative border rounded-t-lg border-black shadow-2xl">
                 <div className="footer flex justify-end gap-2 py-0.5 px-1 text-white bg-gradient-to-t to-[#428EE9] bg-[#0E60CB] from-[#0E60CB]">
-                    <button onClick={() => { handleLogginOffClick() }} className="flex items-center gap-1 rounded hover:brightness-110 hover:bg-[#3a89ff] cursor-pointer p-1">
+                    <button title='Logout' onClick={() => { handleLogginOffClick() }} className="flex items-center gap-1 rounded hover:brightness-110 hover:bg-[#3a89ff] cursor-pointer p-1">
                         <Image src={Logout} alt="Logout" width={23} />
                         <div className="text-xs">Log Off</div>
                     </button>
                     <button
+                        title='Power Off'
                         className="flex items-center gap-1 rounded hover:brightness-110 hover:bg-[#3a89ff] cursor-pointer p-1"
                         onClick={() => { handleShutdownClick() }}
                     >

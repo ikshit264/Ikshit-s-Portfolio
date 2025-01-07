@@ -49,13 +49,13 @@ const TopControls: React.FC<TopControlsProps> = ({
         {Title}
       </div>
       <div className="flex gap-1 z-40">
-        <button onClick={(e) => {handleMin(e)}} onTouchStart={(e) => handleMin(e)} className="cursor-pointer hover:brightness-110">
+        <button title="Minimize" onClick={(e) => {handleMin(e)}} onTouchStart={(e) => handleMin(e)} className="cursor-pointer hover:brightness-110">
           <Image src={Minimize} alt="Minimize" width={25} height={25} />
         </button>
-        <button onClick={() => {handleMax()}} onTouchStart={() => handleMax()} className="cursor-pointer hover:brightness-110">
+        <button title='Maximise' onClick={() => {handleMax()}} onTouchStart={() => handleMax()} className="cursor-pointer hover:brightness-110">
           <Image src={Maximize} alt="Maximize" width={25} height={25} />
         </button>
-        <button onClick={(e) => {handleClose(e)}} onTouchStart={(e)=>{handleClose(e)}} className="cursor-pointer hover:brightness-110">
+        <button title='Close' onClick={(e) => {handleClose(e)}} onTouchStart={(e)=>{handleClose(e)}} className="cursor-pointer hover:brightness-110">
           <Image src={Exit} alt="Close" width={25} height={25} />
         </button>
       </div>

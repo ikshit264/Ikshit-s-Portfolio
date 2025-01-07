@@ -18,6 +18,7 @@ const HandleImage = (image: StaticImageData, alt: string, tooltip: string, isAct
 
   return (
     <div
+    title={tooltip}
       className={`flex items-center ${isActive ? 'hover:border' : 'brightness-90'} justify-center p-1  w-[35px] border-black rounded hover:bg-slate-200 hover:cursor-pointer relative group`}
       onClick={func}
     >
@@ -100,13 +101,13 @@ const Interactions: React.FC<ChildComponentProps> = ({ index }) => {
     <div className="flex gap-2 border-t-[1px] border-[#E2DECD] bg-[#F0F0E7] h-10 w-full overflow-x-scroll no-scrollbar">
       <div className="flex gap-1 border-r-[2px] pr-2 border-r-white">
         <div className="flex items-center p-0.5 gap-3">
-          <button className='flex items-center bg-black/10 px-1  rounded-[2px]'>
+          <div className='flex items-center bg-black/10 px-1  rounded-[2px]'>
             {HandleImage(Backword, "Backward", "Backward", false)}
             <span>Backward</span>
-          </button>
-          <button className='flex items-center bg-black/10  rounded-[2px]'>
+          </div>
+          <div className='flex items-center bg-black/10  rounded-[2px]'>
             {HandleImage(Forword, "Forward", "Forward", false)}
-          </button>
+          </div>
         </div>
         <div className="flex items-center p-0.5 gap-1 border-l-[2px] border-l-white ">
           {HandleImage(IE_Stop, "IE_Stop", "Close All", true, (e) => HandleCloseAll(e!))}
@@ -115,20 +116,20 @@ const Interactions: React.FC<ChildComponentProps> = ({ index }) => {
         </div>
       </div>
       <div className="flex gap-1  pr-2 border-r-[2px] border-r-white items-center">
-        <button className='flex items-center bg-black/10  rounded-[2px]'>
+        <div className='flex items-center bg-black/10  rounded-[2px]'>
           {HandleImage(Search, "Search", "Search", false)}
-        </button>
+        </div>
         {HandleImage(Email, "Email", "Email Me", true, handleEmailClick)}
         {HandleImage(IE_Media, "Media", "My Media", true, HandleMusicClick)}
       </div>
       <div className="flex gap-1 items-center">
-        {/* <button className='flex items-center bg-black/10  rounded-[2px]'>
+        {/* <div className='flex items-center bg-black/10  rounded-[2px]'>
           {HandleImage(Blogs!, "Blog", "Blogs", false)}
-        </button> */}
+        </div> */}
         {HandleImage(Printer, "Printer", "Print CV", true, ClickPrint)}
-        <button>
+        <div>
           {HandleImage(HLP, "Help", "Help", true, ClickHelp)}
-        </button>
+        </div>
       </div>
     </div>
   );

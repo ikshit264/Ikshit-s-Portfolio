@@ -6,7 +6,7 @@ const NavComp = () => {
     <div className='flex p-0.5 bg-[#F0F0E7] w-full'>
       {
         NavbarTabs.map((name, index)=>(
-          <button key={index} className='hover:bg-zinc-400 px-1 '>
+          <button title={name.name} key={index} className='hover:bg-zinc-400 px-1 '>
             {name.name}
           </button>
         ))

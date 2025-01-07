@@ -33,11 +33,11 @@ const MyComputer: React.FC<ChildComponentProps> = ({ makeTrue }) => {
         <h2 className="text-sm font-bold p-1">Files Stored on This Computer</h2>
         <GradientLine className="mb-2" />
         <div className="flex gap-4">
-          <button onClick={()=>{handleclick(5)}} className="flex flex-col items-center">
+          <button title='Exp' onClick={()=>{handleclick(5)}} className="flex flex-col items-center">
             <Image src={SharedDocsIcon} alt="Experience" width={40} height={40} />
             <span className="text-xs mt-1 text-center">Experience</span>
           </button>
-          <button onClick={()=>{handleclick(7)}} className="flex flex-col items-center">
+          <button title='About me' onClick={()=>{handleclick(7)}} className="flex flex-col items-center">
             <Image src={UserDocsIcon} alt="User's Documents" width={40} height={40} />
             <span className="text-xs mt-1 text-center">About ME</span>
           </button>
@@ -49,7 +49,7 @@ const MyComputer: React.FC<ChildComponentProps> = ({ makeTrue }) => {
         <h2 className="text-sm font-bold p-1">Hard Disk Drives</h2>
         <GradientLine className="mb-2" />
         <div className="flex gap-4">
-          <button onClick={()=>{handleclick(0)}} className="flex flex-col items-center">
+          <button title='NTG' onClick={()=>{handleclick(0)}} className="flex flex-col items-center">
             <Image src={LocalDiskIcon} alt="Local Disk (C:)" width={40} height={40} />
             <span className="text-xs mt-1 text-center">Local Disk (C:)</span>
           </button>

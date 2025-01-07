@@ -1,9 +1,9 @@
 import { ChildComponentProps } from '@/Types/Interfaces';
 import React from 'react';
 
-const AboutMe: React.FC<ChildComponentProps> = ({ makeTrue })=> {
+const AboutMe: React.FC<ChildComponentProps> = ({ makeTrue }) => {
 
-  if (!makeTrue){
+  if (!makeTrue) {
     return null;
   }
 
@@ -21,9 +21,9 @@ const AboutMe: React.FC<ChildComponentProps> = ({ makeTrue })=> {
         <div className='fle justify-between items-center bg-blue-600 text-white p-2'>
           {/* <span className='font-bold text-lg'>My Computer</span> */}
           <div className='flex space-x-1 justify-end'>
-            <button className='flex justify-center items-center w-4 h-4 bg-blue-500 hover:bg-blue-800'>-</button>
-            <button className='flex justify-center items-center w-4 h-4 bg-blue-500 hover:bg-blue-800'>□</button>
-            <button className='flex justify-center items-center w-4 h-4 bg-red-400 hover:bg-red-700'>x</button>
+            <button title='NTG' className='flex justify-center items-center w-4 h-4 bg-blue-500 hover:bg-blue-800'>-</button>
+            <button title='NTG' className='flex justify-center items-center w-4 h-4 bg-blue-500 hover:bg-blue-800'>□</button>
+            <button title='NTG' className='flex justify-center items-center w-4 h-4 bg-red-400 hover:bg-red-700'>x</button>
           </div>
         </div>
 
@@ -41,8 +41,8 @@ const AboutMe: React.FC<ChildComponentProps> = ({ makeTrue })=> {
           <p className='text-lg mb-8'>
             Explore my work to see how I blend creativity with technical skills to deliver high-quality solutions. Whether you’re interested in a new project or just want to chat about technology, feel free to get in touch!
           </p>
-          <button
-            onClick={()=>{handleCLick()}}
+          <button title='Contact'
+            onClick={() => { handleCLick() }}
             className='cursor-pointer bg-blue-300 text-gray-900 py-2 px-4 rounded-md font-bold border border-gray-500 hover:bg-blue-400 transition-colors'
           >
             Contact Me
