@@ -2,8 +2,6 @@
 
 A fully interactive and modern portfolio website designed to simulate the look and feel of the classic Windows XP operating system. This project combines nostalgia with innovation, presenting your personal and professional details in a creative, memorable, and highly interactive way.
 
-![Project Screenshot](./screenshot.png)
-
 ## 🌟 Features
 
 - **Interactive Desktop Environment**: Mimics the Windows XP interface with desktop icons, taskbar, and start menu.
@@ -54,10 +52,6 @@ root/
 ## 🤝 Contributions
 
 Contributions, issues, and feature requests are welcome! Feel free to open an issue or submit a pull request.
-
-## 📜 License
-
-This project is licensed under the [MIT License](./LICENSE).
 
 ## 💡 Inspiration
 
