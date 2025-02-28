@@ -11,6 +11,11 @@ on:
     - cron: '0 1 * * *'  # Runs daily at 1 AM UTC
   workflow_dispatch:  # Enables manual trigger
 
+permissions:
+  contents: read
+  security-events: write
+  actions: write
+
 jobs:
   analyze:
     name: Analyze
@@ -62,5 +67,6 @@ jobs:
       matrix:
         language:
           - javascript
+          - typescript
 
     timeout-minutes: 60
