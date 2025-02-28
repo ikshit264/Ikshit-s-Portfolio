@@ -1,37 +1,50 @@
+name: CodeQL
+true:
+  pull_request:
+    branches:
+    - main
+  push:
+    branches:
+    - main
+  schedule:
+  - cron: 0 1 * * *
+  workflow_dispatch: null
 jobs:
   analyze:
     name: Analyze
-    permissions:
-      actions: read
-      contents: read
-      security-events: write
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         fetch-depth: 0
+    - id: detect-node-version
+      name: Detect Node.js version
+      run: "NODE_VERSION=$(jq -r '.engines.node' package.json 2>/dev/null || echo\
+        \ '16')\nif [[ \"$NODE_VERSION\" == \"null\" ]]; then\n  NODE_VERSION=\"16\"\
+        \nfi\necho \"::set-output name=node_version::$NODE_VERSION\"\necho \"Node.js\
+        \ version: $NODE_VERSION\"\n"
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ steps.detect-node-version.outputs.node_version }}
+    - name: Cache npm dependencies
+      uses: actions/cache@v4
+      with:
+        key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+        path: ~/.npm
+        restore-keys: '${{ runner.os }}-npm-
+
+          '
+    - name: Install dependencies
+      run: "find . -name \"package.json\" -print0 | while IFS= read -r -d $'\\0' dir;\
+        \ do\n  cd \"$(dirname \"$dir\")\"\n  echo \"Installing dependencies in $(pwd)\"\
+        \n  npm install\n  cd - > /dev/null\ndone\n"
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3
       with:
         config-file: ./.github/codeql-config.yml
         languages: ${{ matrix.language }}
-    - if: matrix.language == 'javascript'
-      name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 16.x
-    - if: matrix.language == 'javascript'
-      name: Cache npm dependencies
-      uses: actions/cache@v3
-      with:
-        key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
-        path: '**/node_modules'
-        restore-keys: ${{ runner.os }}-
-    - if: matrix.language == 'javascript'
-      name: Install Dependencies
-      run: "find . -name \"package.json\" -print0 | while IFS= read -r -d $'\\0' dir;\
-        \ do\n  cd \"$(dirname \"$dir\")\"\n  npm install\n  cd -\ndone\n"
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
       with:
@@ -42,13 +55,3 @@ jobs:
         language:
         - javascript
     timeout-minutes: 60
-name: CodeQL
-'on':
-  pull_request:
-    branches:
-    - main
-  push:
-    branches:
-    - main
-  schedule:
-  - cron: 0 1 * * *
