@@ -1,57 +1,67 @@
 name: CodeQL
-true:
+
+on:
   pull_request:
     branches:
-    - main
+      - main
   push:
     branches:
-    - main
+      - main
   schedule:
-  - cron: 0 1 * * *
-  workflow_dispatch: null
+    - cron: '0 1 * * *'  # Runs daily at 1 AM UTC
+  workflow_dispatch:  # Enables manual trigger
+
 jobs:
   analyze:
     name: Analyze
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-    - id: detect-node-version
-      name: Detect Node.js version
-      run: "NODE_VERSION=$(jq -r '.engines.node' package.json 2>/dev/null || echo\
-        \ '16')\nif [[ \"$NODE_VERSION\" == \"null\" ]]; then\n  NODE_VERSION=\"16\"\
-        \nfi\necho \"::set-output name=node_version::$NODE_VERSION\"\necho \"Node.js\
-        \ version: $NODE_VERSION\"\n"
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ steps.detect-node-version.outputs.node_version }}
-    - name: Cache npm dependencies
-      uses: actions/cache@v4
-      with:
-        key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
-        path: ~/.npm
-        restore-keys: '${{ runner.os }}-npm-
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - id: detect-node-version
+        name: Detect Node.js version
+        run: |
+          NODE_VERSION=$(jq -r '.engines.node' package.json 2>/dev/null || echo '16')
+          if [[ "$NODE_VERSION" == "null" ]]; then
+            NODE_VERSION="16"
+          fi
+          echo "node_version=$NODE_VERSION" >> $GITHUB_ENV
+          echo "Node.js version: $NODE_VERSION"
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.node_version }}
+      - name: Cache npm dependencies
+        uses: actions/cache@v4
+        with:
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          path: ~/.npm
+          restore-keys: |
+            ${{ runner.os }}-npm-
+      - name: Install dependencies
+        run: |
+          find . -name "package.json" -print0 | while IFS= read -r -d $'\0' dir; do
+            cd "$(dirname "$dir")"
+            echo "Installing dependencies in $(pwd)"
+            npm install
+            cd - > /dev/null
+          done
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          config-file: ./.github/codeql-config.yml
+          languages: ${{ matrix.language }}
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: /${{ matrix.language }}
 
-          '
-    - name: Install dependencies
-      run: "find . -name \"package.json\" -print0 | while IFS= read -r -d $'\\0' dir;\
-        \ do\n  cd \"$(dirname \"$dir\")\"\n  echo \"Installing dependencies in $(pwd)\"\
-        \n  npm install\n  cd - > /dev/null\ndone\n"
-    - name: Initialize CodeQL
-      uses: github/codeql-action/init@v3
-      with:
-        config-file: ./.github/codeql-config.yml
-        languages: ${{ matrix.language }}
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v3
-      with:
-        category: /${{ matrix.language }}
     strategy:
       fail-fast: false
       matrix:
         language:
-        - javascript
+          - javascript
+
     timeout-minutes: 60
