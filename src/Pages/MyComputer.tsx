@@ -1,11 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
-import SharedDocsIcon from '@/../public/Shared_Folder_Close.png';
-import UserDocsIcon from '@/../public/MyDocuments.png';
-import LocalDiskIcon from '@/../public/LocalDisk.png';
-import CDDriveIcon from '@/../public/CDDrive.png';
-import GithubIcon from '@/../public/GitHub.png';
-import DogeIcon from '@/../public/Do_Not_Open.png';
+import SharedDocsIcon from '@/../public/Shared_Folder_Close.webp';
+import UserDocsIcon from '@/../public/MyDocuments.webp';
+import LocalDiskIcon from '@/../public/LocalDisk.webp';
+import CDDriveIcon from '@/../public/CDDrive.webp';
+import GithubIcon from '@/../public/GitHub.webp';
+import DogeIcon from '@/../public/Do_Not_Open.webp';
 import { ChildComponentProps } from '@/Types/Interfaces';
 
 // Reusable Gradient Line Component

@@ -50,7 +50,7 @@ export default function Home() {
     <div className="overflow-hidden"
       onContextMenu={handleRightClick}
       style={{
-        backgroundImage: `url('/bg_img/bg_img${imgIndex}.jpg')`,
+        backgroundImage: `url('/bg_img/bg_img${imgIndex}.webp')`,
         backgroundSize: "100% 100%",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

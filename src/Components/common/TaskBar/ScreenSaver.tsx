@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { motion, useAnimation, useMotionValue } from 'framer-motion'
 import Image from 'next/image'
-import WindowXPLogo from "@/../public/WindowsXPLogo.png"
+import WindowXPLogo from "@/../public/WindowsXPLogo.webp"
 
 const Screensaver: React.FC = () => {
   const [isActive, setIsActive] = useState(true)

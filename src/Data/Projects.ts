@@ -1,6 +1,6 @@
 import { IconType } from "react-icons";
 import { FaJs, FaPython, FaReact } from "react-icons/fa";
-import MyComputerimg from '@/../public/My_Computer.png'
+import MyComputerimg from '@/../public/My_Computer.webp'
 import { StaticImageData } from "next/image";
 
 export interface IProject {

@@ -1,6 +1,6 @@
 import React from 'react';
-import ME from "@/../public/ME.jpg"
-import Linkedin from "@/../public/Linkedin.png"
+import ME from "@/../public/ME.webp"
+import Linkedin from "@/../public/Linkedin.webp"
 import Image from 'next/image';
 
 

@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import Speaker from '@/../public/Speaker.png';
-import Data_Send from '@/../public/Data_Send.png';
-import Shield_Deactivate from '@/../public/Shield_Deactivate.png';
+import Speaker from '@/../public/Speaker.webp';
+import Data_Send from '@/../public/Data_Send.webp';
+import Shield_Deactivate from '@/../public/Shield_Deactivate.webp';
 import LittleInfo from './LittleInfo';
 import { ChildComponentProps } from '@/Types/Interfaces';
 

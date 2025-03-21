@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React, { useState } from 'react';
-import Critical from '@/../public/Critical.png';
-import Exit from '@/../public/Exit.png';
+import Critical from '@/../public/Critical.webp';
+import Exit from '@/../public/Exit.webp';
 import { ChildComponentProps } from '@/Types/Interfaces';
 import { Rnd } from 'react-rnd';
 import { useStateManagement } from '@/hooks/StateContext';

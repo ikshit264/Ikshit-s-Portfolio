@@ -1,9 +1,9 @@
 import { ChildComponentProps } from '@/Types/Interfaces';
 import Image from 'next/image';
 import React from 'react';
-import Exit from '@/../public/Exit.png';
-import Minimize from '@/../public/Minimize.png';
-import Maximize from '@/../public/Maximize.png';
+import Exit from '@/../public/Exit.webp';
+import Minimize from '@/../public/Minimize.webp';
+import Maximize from '@/../public/Maximize.webp';
 
 interface TopControlsProps extends ChildComponentProps {
   handleMax: () => void;

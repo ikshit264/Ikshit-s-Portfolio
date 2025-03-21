@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import WindowXPLogo from "@/../public/WindowsXPLogo.png"
+import WindowXPLogo from "@/../public/WindowsXPLogo.webp"
 import Image from 'next/image';
 
 interface LoggingProps {

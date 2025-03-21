@@ -1,5 +1,5 @@
 import React from 'react';
-import DoubleUpARrow from '@/../public/Double_Arrow_Up.png'
+import DoubleUpARrow from '@/../public/Double_Arrow_Up.webp'
 import Image, { StaticImageData } from 'next/image';
 
 interface Social {

@@ -1,6 +1,6 @@
 import Image, { StaticImageData } from 'next/image';
 import React, { useRef, useEffect } from 'react';
-import CMD_img from "@/../public/Command_Prompt.png";
+import CMD_img from "@/../public/Command_Prompt.webp";
 import { useStateManagement } from '@/hooks/StateContext';
 
 interface Position {

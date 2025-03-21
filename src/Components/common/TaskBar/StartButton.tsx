@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import StartBtn from '@/../public/StartButton.png';
-import Start_Dots from '@/../public/Start_Dots.png';
+import StartBtn from '@/../public/StartButton.webp';
+import Start_Dots from '@/../public/Start_Dots.webp';
 import Image from 'next/image';
 import StartComponents from './StartComponents';
 import { ChildComponentProps } from '@/Types/Interfaces';

@@ -1,12 +1,12 @@
 import React from 'react';
 import { MyComputerProp } from '@/Types/Interfaces';
 import Content from './Navbar/Content';
-import Linkedin from '@/../public/Linkedin.png';
-import GitHub from '@/../public/GitHub.png';
-import InstaGram from '@/../public/Instagram.png';
-import Codechef from '@/../public/codechef.png';
-import codeforces from '@/../public/codeforces.png';
-import Leetcode from '@/../public/leetcode.png';
+import Linkedin from '@/../public/Linkedin.webp';
+import GitHub from '@/../public/GitHub.webp';
+import InstaGram from '@/../public/Instagram.webp';
+import Codechef from '@/../public/codechef.webp';
+import codeforces from '@/../public/codeforces.webp';
+import Leetcode from '@/../public/leetcode.webp';
 
 //TODO -  {You can contribute here}
 import xpQuotes from '@/./Data/xp_quotes.json'; 

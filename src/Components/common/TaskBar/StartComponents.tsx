@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import ME from '@/../public/ME.jpg';
-import Logout from '@/../public/Logout.png';
-import Power_Off from '@/../public/Power.png';
+import ME from '@/../public/ME.webp';
+import Logout from '@/../public/Logout.webp';
+import Power_Off from '@/../public/Power.webp';
 import { ChildComponentProps } from '@/Types/Interfaces';
 import { useStateManagement } from '@/hooks/StateContext';
 import { ErrorData } from '@/Data/All-Error-Data';
